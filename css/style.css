@@ -488,8 +488,10 @@
 *{
     width: 100%;
     height: auto;
+    margin: 0;
+    padding: 0;
     box-sizing: content-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins';
 }
 .home  {
     width: 100%;
@@ -499,19 +501,28 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 12% 1fr;
     grid-template-areas: 
-    "head_title menu_home"
+    "header header"
     "home_left home_right";
+    /* flex-wrap: wrap; */
+}
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "head_title menu_home";
 }
 .header_title{
     grid-area: head_title;
     color: var(--color-primary);
     width: 100%;
+    height: 100%;
     font-size: 2em;
 }
 .menu_home{
     grid-area: menu_home;
     text-decoration: none; 
-    height: 100%;
+    height: 10em;
     display: flex;
 }
 .menu_home ul{
@@ -528,8 +539,11 @@
     text-decoration: none;
     color: var(--color-white);
     font-size: 1.2em;
-    font-weight: 400;
+    font-weight: 300;
     font-family: 'Poppins';
+}
+.menu_home ul li a:hover{
+    color: var(--color-primary);
 }
 .home_left{
     grid-area: home_left;
