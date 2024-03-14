@@ -10,8 +10,8 @@
     display: grid;
     border: 3px solid var(--color-primary);
     font-family: 'Poppins',sans-serif;
-    /* grid-template-columns: 100%; */
-    grid-template-rows: 100svh 100svh 100svh 100svh 100svh 100svh;
+    /* grid-template-columns: 100%; */ /*180svh*/
+    grid-template-rows: 100svh 100svh auto auto 100vh 100vh;
     grid-template-areas: 
     "home"
     "about_us"
@@ -48,7 +48,6 @@
     font-size: 2.5rem;
     font-weight: 500;
     letter-spacing: -3px;
-    /* background-color: blue; */
 }
 .menu_hamburguesa{
     display: none;
@@ -77,9 +76,6 @@
     color: var(--color-primary);
     cursor: pointer;
 }
-.ul_menu_home .li_links{
-}
-
 .ul_menu_home li a{
     display:flex;
     text-decoration: none;
@@ -127,9 +123,8 @@
     border: 1px solid var(--color-contraste);
   }
 }
-/******************* Fin head ************************/
 
-/***************** Home contenido ******************/
+/** Home contenido **/
 .home_container{
     width: 100vw;
     height: calc( 100svh - var(--altura-header));
@@ -140,7 +135,6 @@
       100%;
       flex-wrap: wrap;
 }
-
 .home_left{
     display: grid;
     grid-area: h_left;
@@ -183,9 +177,6 @@
   width: 360px;
 }
 
-.container_home_button{
-  width: 6rem;
-}
 @media (min-width:945px){
   .home_container{
     display: grid;
@@ -214,11 +205,9 @@
   .home_left button{
       margin-top: 5%;
       width: max-content;
-      background: var(--color-primary);
       font-size: 1.8rem;
       block-size: initial;
-      color: var(--color-white);
-      border: none;
+
       padding: 0.8rem;
   }
   .home_right{
@@ -232,16 +221,335 @@
     /* scale: 1.6 2; */
   }
 }
+/********* FIN personalizacion HOME ***************************/
 
-/********* FIN PERSONALIZACION HOME ***************************/
+/*********  Inicio perzonalizacion About US ********************/
 .about_us{
   grid-area: about_us;
+  background-color: var(--color-dark);
 }
+
+.about_container {
+    width: 100svw;
+    height: 100%;
+    display: grid;
+    grid-template:
+      "ab_right" 40%
+      "ab_left" auto/
+      100%;
+    flex-wrap: wrap;
+  }
+.about_right {
+    grid-area: ab_right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    text-align: center;
+    row-gap: 1.2rem;
+}
+
+.about_right p1{
+    font-size: 0.9rem;
+    color: var(--color-primary);
+}
+.about_right h1{
+  display: flex;
+  font-size: 2rem;
+  color: var(--color-white);
+  font-weight: 500;
+}
+.about_right p2{
+  font-size: 1rem;
+  color: var(--color-white);
+  width: 75%;
+}
+.about_button {
+    margin-top: 3%;
+    width: 9rem;
+    height: 2.5rem;
+    background: var(--color-primary);
+    font-size: 1.1rem;
+    color: var(--color-white);
+    border: none;
+}
+.about_left {
+    grid-area: ab_left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about_left img{
+    height: 300px;
+    width: 360px;
+}
+@media (min-width:945px){
+  .about_container {
+    display: grid;
+    width: 100svw;
+    grid-template:
+      "ab_left ab_right" 100%/
+    50% 50%;
+    flex-wrap: wrap;
+  }
+.about_right {
+    /* display: grid; */
+    /* grid-area: ab_right; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    row-gap: 1.5rem;
+}
+
+.about_right p1{
+    font-size: 1.8rem;
+    color: var(--color-primary);
+}
+.about_right h1{
+    font-size: 4rem;
+    width: 70%;
+
+}
+.about_right p2{
+    font-size: 2rem;
+}
+.about_button {
+    width: max-content;
+    font-size: 1.8rem;
+    block-size: initial;
+    padding: 0.8rem;
+}
+.about_left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8%;
+}
+.about_left img{
+    height: auto;
+    width: max(450px,70%);
+    padding-bottom: 6%;
+    /* scale: 1.6 2; */
+}
+}
+/*********** FIN Personalizacion about US *****************/
+/*********** INICIO personalizacion FOOD-MenU **************/
 .food_menu{
-  grid-area: food_menu;
+    grid-area: food_menu;
+  }
+  .food_menu_container {
+    background-color: var(--color-dark);
+    width: 100svw;
+    height: 100%;
+    display: grid;
+    grid-template:
+      "f_sup" 10%
+      "f_inf" auto/
+      100%;
+    flex-wrap: wrap;
+    gap: 3rem;
 }
+
+
+.food_menu_sup {
+    grid-area: f_sup;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    row-gap: 1.2rem;
+    padding-top: 3%; /*por verificar*/
+}
+.food_menu_sup p{
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+.food_menu_sup h1{
+  font-size: 2rem;
+  width: 70%;
+  color: var(--color-white);
+  font-weight: 500;
+  text-align: center;
+}
+
+
+.food_menu_inf {
+  grid-area: f_inf;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.food_menu_inf .box_food {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--color-soft);
+  border: 5px solid var(--color-movil);
+  padding: 1.5rem;
+}
+.food_menu_inf .box_food img{
+  height: auto;
+  width: min(270px,70%);
+}
+.food_menu_inf .box_food p1{
+  font-size: 1.1rem;
+  color: var(--color-black);
+}
+.food_menu_inf .box_food small{
+  font-size: 0.8rem;
+  color: var(--color-black);
+}
+.food_menu_inf .box_food p2{
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+@media (min-width:1095px){
+  .food_menu_container {
+    height: 100svh;
+  }
+  .food_menu_sup p{
+    font-size: 2rem;
+  }
+  .food_menu_sup h1{
+    font-size: 4rem;
+    width: 70%;
+    letter-spacing: 6px;
+  }
+  .food_menu_inf .box_food {
+    border: 3px solid gray;
+  }
+  .food_menu_inf .box_food p1{
+    font-size: 1.8rem;
+    color: var(--color-black);
+    font-weight: 400;
+  }
+  .food_menu_inf .box_food small{
+    font-size: 1.2rem;
+    color: var(--color-black);
+  }
+  .food_menu_inf .box_food p2{
+    font-size: 1.6rem;
+    color: var(--color-primary);
+  }
+}
+/*********** FIN personalizacion FOOD Menu **************/
+/*********** INICIO personalizacion SERVICES **************/
 .services{
   grid-area: services;
+}
+
+.services_container {
+  background-color: var(--color-dark);
+  width: 100svw;
+  height: auto;
+  display: grid;
+  grid-template:
+    "f_sup" 12%
+    "f_inf" auto/
+    100%;
+  flex-wrap: wrap;
+  /* gap: 2rem; */
+}
+
+
+.services_sup {
+  grid-area: f_sup;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  row-gap: 0.8rem;
+  padding-top: 5%;
+}
+.services_sup p{
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+.services_sup h1{
+  font-size: 2rem;
+  width: 90%;
+  color: var(--color-white);
+  font-weight: 500;
+  text-align: center;
+}
+
+
+.services_inf {
+  grid-area: f_inf;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.services_inf .box_services {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  width: auto;
+}
+.services_inf .box_services img{
+  height: auto;
+  width: min(230px,70%);
+}
+.services_inf .box_services p1{
+  width: 50%;
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-align: center;
+}
+
+.services_inf .box_services p2{
+  width: 85%;
+  font-size: 1.2rem;
+  color: var(--color-white);
+  text-align: center;
+}
+
+@media (min-width:1095px){
+.services_container {
+  height: 100svh;
+  gap: none;
+}
+.services_sup{
+  padding-top: 0;
+}
+.services_sup p{
+  font-size: 2rem;
+}
+.services_sup h1{
+  font-size: 4rem;
+  width: 70%;
+  letter-spacing: 6px;
+}
+.services_inf .box_services {
+  background: none;
+  width: 32%;
+}
+.services_inf .box_services p1{
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+.services_inf .box_services p2{
+  width: 60%;
+  font-size: 1.8rem;
+  color: var(--color-white);
+}
 }
 .target{
   grid-area: target;
