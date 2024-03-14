@@ -12,6 +12,9 @@
     --color-soft:#ffefe8;
     --color-movil:#2c2b47;
     --color-contraste:#087f5b;
+    --color-transparente:#2c2b47b5;
+
+    --altura-header:90px
 }
 
 @font-face {

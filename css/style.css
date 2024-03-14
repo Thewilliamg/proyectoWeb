@@ -1,100 +1,107 @@
 @import url(variables.css);
 
 *{
-    width: 100%;
+    /* width: 100%; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins';
 }
 
 .grid-container{
-  /* height: 100svh; */
-  display: grid;
-  border: 3px solid var(--color-primary);
-  grid-template-rows: 100svh 100svh 100svh 100svh 100svh 100svh;
-  grid-template-areas: 
-  "home"
-  "about_us"
-  "food_menu"
-  "services"
-  "target"
-  "footer"
-  ;
+    display: grid;
+    border: 3px solid var(--color-primary);
+    font-family: 'Poppins';
+    /* grid-template-columns: 100%; */
+    grid-template-rows: 100svh 100svh 100svh 100svh 100svh 100svh;
+    grid-template-areas: 
+    "home"
+    "about_us"
+    "food_menu"
+    "services"
+    "target"
+    "footer"
+    ;
+    overflow: hidden;
 }
 /************** PERSONALIZACION HOME ***********************/
 .home  {
     display: flex;
-    width: 100svw;
+    width: 100%;
     height: 100%;
     background: var(--color-dark);
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    display: grid
     /* grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 10fr; */
     /* row-gap: 1rem; */
     /* grid-template-areas: 
     "header header"
-    "home_left home_right" */
-    ;
+    "home_left home_right";*/
+    
 }
 .home_header{
-    height: 12%;
+    height: var(--altura-header);
     /* grid-area: header;
     display: grid;
     grid-auto-rows: 10rem;
     grid-template-columns: 1fr minmax(1rem,1fr);
     column-gap: 1rem; */
-    box-sizing: border-box;
-    justify-content: space-between;
+    /* box-sizing: border-box; */
     /* overflow: hidden; */
     /* grid-template-areas: 
     "head_title menu_home"; */
-  }
+}
 .navbar{
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 var(--padding_left_right);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
 .header_title{
-    grid-area: head_title;
     color: var(--color-primary);
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 500;
     /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    padding-left: 5%;
 }
-.ul_menu_home{
-    padding-left: 1rem;
+.menu_hamburguesa{
+    display: none;
+}
+
+.ul_menu_home{ /*ul    Lista  */
+    width: 100%;
+    background-color: var(--color-transparente);
+    position: absolute;
+    top: var(--altura-header);
+    left: 0;
+    height: 0; /*para "desaparecerlo" */
+    overflow: hidden;
     display: flex;
-    width: 90%;
-    grid-area: menu_home;
+    flex-direction: column;
+    justify-content: center;
     text-decoration: none; 
     align-items: center;
-    justify-content: space-between;
+    list-style: none;
+    transition: all .2s;
+    /* padding-left: 1rem; */
     /* background-color: red; */
   }
-.ul_menu_home ul{
-    display: flex;
-    flex-direction: row;
-    /* gap: 1rem; */
-  }
-.ul_menu_home ul .li_links{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-  }
+.menu_hamburguesa:checked + .ul_menu_home{ /*Para aparecerlo al clickear*/
+  height: calc(100svh - var(--altura-header));
+}
+.burger_icon{  /*icono del menu*/
+    color: var(--color-primary);
+    cursor: pointer;
+}
+.ul_menu_home .li_links{
+}
+
 .ul_menu_home li a{
     display:flex;
     text-decoration: none;
-    width: min-content;
     color: var(--color-white);
-    font-size: 2.2em;
+    font-size: 3em;
     font-weight: 500;
     font-family: 'Poppins',sans-serif;
     justify-content: center;
@@ -103,7 +110,7 @@
     border: 4px solid var(--color-contraste);
 }
 /*******************Fin head************************/
-.home_left{
+/*.home_left{
     grid-area: home_left;
     display: grid;
     flex-direction: column;
