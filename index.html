@@ -9,19 +9,43 @@
 
 </head>
 <body>
-    <section class="home">
-        <aside class="home_menubar">
+    <main class="home">
+        <aside class="h_menubar">
             <h1>CampusShop</h1>
-            <ul>
-                <li class="home_link"><a href="#">Todos los productos</a></li>
-                <li class="home_link"><a href="#">Abrigos</a></li>
-                <li class="home_link"><a href="#">Camisetas</a></li>
-                <li class="home_link"><a href="#">Pantalones</a></li>
-                <li class="home_link"><a href="#">Carritos <p>(3)</p></a></li>
+            <ul class="h_ul">
+                <li class="h_link"><a href="#">Todos los productos</a></li>
+                <li class="h_link"><a href="#">Abrigos</a></li>
+                <li class="h_link"><a href="#">Camisetas</a></li>
+                <li class="h_link"><a href="#">Pantalones</a></li>
+                <li class="h_link" id="carrito"><a href="#" id="carrito">Carrito (3)</a></li>
             </ul>
-            <footer class="home_footer">2023 Camper</footer>
+            <footer class="h_footer"><small>©2023 Camper</small></footer>
         </aside>
-        <section class="home_container"></section>
-    </section>
+        <section class="h_container">
+            <article>
+                <h1>Todos los productos</h1>
+                <div class="gallery">
+                    <div class="boxes">
+                        <div class="box" id="abrigo1">
+                            <img src="storage/img/abrigo1.png">
+                            <div class="info">
+                                <p>Chaqueta Impermeable En Gabán Para Dama</p>
+                                <b>$ 93.900</b>
+                                <button class="h_button">Agregar</button>
+                            </div>
+                        </div> 
+                        <div class="box" id="abrigo2">
+                            <img src="storage/img/abrigo2.png">
+                            <div class="info">
+                                <p>Chaqueta Impermeable En Gabán Para Dama</p>
+                                <b>$ 93.900</b>
+                                <button class="h_button">Agregar</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
